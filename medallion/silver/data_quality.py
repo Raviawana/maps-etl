@@ -1,6 +1,6 @@
 from pyspark.sql.functions import col
 
-def run_data_quality_check(df):
+def run_data_quality_checks(df):
     checks = {
         "null_event_id": df.filter(col("event_id").isNull()).count(),
         "null_event_time": df.filter(col("event_time").isNull()).count()

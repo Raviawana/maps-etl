@@ -14,7 +14,7 @@ def ingest_to_bronze(spark, source_path, bronze_path, last_watermark):
     df.write
     .mode("append")
     .format("delta")
-    .save(bronze_path)
+    .saveAsTable(bronze_path)
     )
     
     return df

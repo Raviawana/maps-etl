@@ -8,5 +8,5 @@ def create_spark_session(app_name:str) -> SparkSession:
         .config("spark.sql.adaptive.enable", "true")
         .enableHiveSupport()
         .getOrCreate()
-    
     )
+    return spark
